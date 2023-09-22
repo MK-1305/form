@@ -1,4 +1,5 @@
 <?php
+    //セッションはサーバーにクッキーはユーザー側に管理したい値を保存する。
     // CSRF（偽物のinput.php->悪意あるページへ）対策：本物かどうかの合言葉を決める
     session_start();
 
@@ -23,6 +24,8 @@
 
     // 入力画面
     $pageFlag = 0;
+
+    //requireで作った関数を$_POSTを引数として使えるようにする
     $errors = validation($_POST);
 
     // btn_confirmに値が入っていたら
